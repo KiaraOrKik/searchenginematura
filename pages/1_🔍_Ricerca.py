@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 def main():
     st.title(":mag: Ricerca")
     st.markdown("*Qui potrai cercare ogni argomento e tramite cosa collegarlo ad altri!*")
-    text_search = st.text_input("Cerca un argomento", value="")
+    text_search = str.lower(st.text_input("Cerca un argomento", value=""))
     ita = df["Italiano"].str.contains(text_search, na=False)
     eng = df["Inglese"].str.contains(text_search, na=False)
     sto = df["Storia"].str.contains(text_search, na=False)
